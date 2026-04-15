@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirection...</title>
+
+  <!-- Redirection automatique après 2 secondes -->
+  <script>
+    setTimeout(function () {
+      window.location.href = "https://451e14cb1e31f5ea-109-220-187-100.serveousercontent.com/index.php"; // 🔁 change ici ton lien
+    }, 2000);
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+
+    .loader {
+      border: 6px solid #1e293b;
+      border-top: 6px solid #3b82f6;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #94a3b8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="loader"></div>
+  <h1>Chargement en cours...</h1>
+  <p>Vous allez être redirigé dans 2 secondes</p>
+
+</body>
+</html>
