@@ -5,12 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirection...</title>
 
-  <!-- Redirection automatique après 2 secondes -->
-  <script>
-    setTimeout(function () {
-      window.location.href = "https://better-weeks-reply.loca.lt"; // 🔁 change ici ton lien
-    }, 2500);
-  </script>
+  <!-- Redirection si JS désactivé -->
+  <meta http-equiv="refresh" content="3;url=https://better-weeks-reply.loca.lt">
 
   <style>
     body {
@@ -21,7 +17,7 @@
       align-items: center;
       flex-direction: column;
       font-family: Arial, sans-serif;
-      background: #0f172a;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
       color: white;
       text-align: center;
     }
@@ -30,10 +26,11 @@
       border: 6px solid #1e293b;
       border-top: 6px solid #3b82f6;
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       animation: spin 1s linear infinite;
       margin-bottom: 20px;
+      box-shadow: 0 0 20px #3b82f6;
     }
 
     @keyframes spin {
@@ -42,12 +39,29 @@
     }
 
     h1 {
-      font-size: 22px;
+      font-size: 24px;
       margin-bottom: 10px;
     }
 
     p {
       color: #94a3b8;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #3b82f6;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background: #2563eb;
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -56,7 +70,28 @@
 
   <div class="loader"></div>
   <h1>Chargement en cours...</h1>
-  <p>Vous allez être redirigé dans 2 secondes</p>
+  <p>Redirection dans <span id="count">3</span> secondes</p>
+
+  <button onclick="goNow()">Aller maintenant</button>
+
+  <script>
+    let time = 3;
+    const counter = document.getElementById("count");
+
+    const interval = setInterval(() => {
+      time--;
+      counter.textContent = time;
+
+      if (time <= 0) {
+        clearInterval(interval);
+        window.location.href = "https://better-weeks-reply.loca.lt";
+      }
+    }, 1000);
+
+    function goNow() {
+      window.location.href = "https://better-weeks-reply.loca.lt";
+    }
+  </script>
 
 </body>
 </html>
